@@ -1,77 +1,89 @@
-# Pin Information
+# Pin Configuration
 
-This page contains information about what pins are used where on the CYD, and what ones are free to use.
+This document details the pin configuration for the ESP32 Cheap Yellow Display (CYD).
 
 ## Display Pins
 
-The display uses the following pins:
-
-- MOSI: GPIO 13
-- MISO: GPIO 12 (not used)
-- CLK: GPIO 14
-- CS: GPIO 15
-- DC: GPIO 2
-- RST: GPIO 4
-- BL: GPIO 21
+| Pin | Function | Notes |
+|-----|-----------|-------|
+| 12 | MISO | SPI Data In |
+| 13 | MOSI | SPI Data Out |
+| 14 | SCK | SPI Clock |
+| 15 | CS | Chip Select |
+| 2 | DC | Data/Command |
+| -1 | RST | Reset (not used) |
+| 21 | BL | Backlight |
 
 ## Touch Screen Pins
 
-The touch screen uses the following pins:
-
-- MOSI: GPIO 32
-- MISO: GPIO 39
-- CLK: GPIO 25
-- CS: GPIO 33
-- IRQ: GPIO 36
+| Pin | Function | Notes |
+|-----|-----------|-------|
+| 36 | IRQ | Interrupt |
+| 32 | MOSI | SPI Data Out |
+| 39 | MISO | SPI Data In |
+| 25 | SCK | SPI Clock |
+| 33 | CS | Chip Select |
 
 ## SD Card Pins
 
-The SD card uses the following pins:
+| Pin | Function | Notes |
+|-----|-----------|-------|
+| 18 | SCK | SPI Clock |
+| 19 | MISO | SPI Data In |
+| 23 | MOSI | SPI Data Out |
+| 5 | CS | Chip Select |
 
-- MOSI: GPIO 13 (shared with display)
-- MISO: GPIO 12
-- CLK: GPIO 14 (shared with display)
-- CS: GPIO 5
+## Available GPIO Pins
 
-## Free Pins
+The following pins are available for general use:
 
-The following pins are free to use:
-
-- GPIO 16
-- GPIO 17
-- GPIO 18
-- GPIO 19
-- GPIO 22
-- GPIO 23
-- GPIO 26
-- GPIO 27
-- GPIO 34
-- GPIO 35
-
-Note: Some pins have special functions or limitations:
-
-- GPIO 34-39 are input only
-- GPIO 6-11 are used by the internal flash and are not available
-- Some pins may have pull-up or pull-down resistors
-
-## Power Pins
-
-- 5V: Available on expansion header
-- 3.3V: Available on expansion header
-- GND: Available on expansion header
-
-## Special Function Pins
-
-- BOOT: GPIO 0
-- EN/RST: Connected to reset circuit
+| Pin | Notes |
+|-----|--------|
+| 0 | Boot button |
+| 1 | TX |
+| 3 | RX |
+| 4 | Available |
+| 16 | Available |
+| 17 | Available |
+| 22 | Available |
+| 26 | Available |
+| 27 | Available |
+| 34 | Input only |
+| 35 | Input only |
 
 ## Notes
 
-1. Always verify pin functionality in your specific use case
-2. Some pins may have different behavior during boot
-3. Check the ESP32 datasheet for detailed pin information
-4. Some pins may affect the boot process if pulled high or low
+- All pins marked as "Available" can be used as either inputs or outputs
+- Pins 34 and 35 can only be used as inputs
+- The boot button (GPIO0) can be used as an input, but it's recommended to leave it for programming
+- TX and RX pins are used for programming and debugging, but can be used for other purposes if needed
 
-## Example Usage
+## Configuration
 
-Check the [Basic GPIO](/Examples/Basics/GPIO) example for how to use the free pins.
+The pin configuration is set in the TFT_eSPI library's User_Setup.h file. The following defines are used:
+
+```cpp
+#define TFT_MISO 12
+#define TFT_MOSI 13
+#define TFT_SCLK 14
+#define TFT_CS   15
+#define TFT_DC    2
+#define TFT_RST  -1
+#define TFT_BL   21
+```
+
+For the touch screen:
+
+```cpp
+#define TOUCH_CS 33
+#define TOUCH_IRQ 36
+```
+
+For the SD card:
+
+```cpp
+#define SD_SCK  18
+#define SD_MISO 19
+#define SD_MOSI 23
+#define SD_CS    5
+```

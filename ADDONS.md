@@ -1,73 +1,87 @@
-# Add-ons for your CYD
+# Add-ons
 
-This page contains information about additional hardware add-ons that can add functionality to your CYD
+This page contains information about add-ons that are available for the CYD.
 
-## Expansion Board
+## Official Add-ons
 
-There is an expansion board available for the CYD that breaks out all the pins and adds some additional functionality.
+These are add-ons that I have designed and tested.
 
-### Features
+### CYD Breakout
+
+![CYD Breakout](https://raw.githubusercontent.com/witnessmenow/ESP32-Cheap-Yellow-Display/main/Hardware/images/breakout.jpg)
+
+The CYD Breakout is a PCB that breaks out all the available pins of the CYD to standard 2.54mm headers.
+
+#### Features:
 
 - Breaks out all available pins
-- Adds a buzzer
-- Adds a reset button
-- Adds a boot button
-- Adds a power LED
-- Adds a user LED
+- Includes a 5V to 3.3V regulator for powering external components
+- Includes a level shifter for using 5V devices with the CYD
+- Includes a prototyping area
+- Includes mounting holes
 
-### Where to buy
+#### Where to buy:
 
-- [Aliexpress*](https://s.click.aliexpress.com/e/_DFbKXVh)
-- [Aliexpress*](https://s.click.aliexpress.com/e/_DmOAoFh)
+- [Tindie](https://www.tindie.com/products/brianlough/cyd-breakout/)
 
-\* = Affiliate link
+### CYD Radio
 
-### Pin Information
+![CYD Radio](https://raw.githubusercontent.com/witnessmenow/ESP32-Cheap-Yellow-Display/main/Hardware/images/radio.jpg)
 
-The expansion board has the following pins broken out:
+The CYD Radio is a PCB that adds a RDA5807M FM radio module to the CYD.
 
-- All ESP32 GPIO pins that are not used by the display or SD card
-- 5V
-- 3.3V
-- GND
+#### Features:
 
-### Example Code
+- Adds FM radio functionality to the CYD
+- Includes a 3.5mm audio jack
+- Includes mounting holes
 
-Check out the [Expansion Board example](/Examples/Basics/ExpansionBoard) for how to use the expansion board.
+#### Where to buy:
 
-## Cases and Stands
+- [Tindie](https://www.tindie.com/products/brianlough/cyd-radio/)
 
-There are several 3D printable cases and stands available for the CYD. Check out the [3D Models](/3dModels) page for more information.
+## Community Add-ons
 
-## Other Add-ons
+These are add-ons that have been designed by the community.
 
-### Battery Support
+### CYD Breakout by @witnessmenow
 
-The CYD can be powered by a battery with some additional hardware. Check out the [Battery Support](/Mods/Battery) page for more information.
+![CYD Breakout](https://raw.githubusercontent.com/witnessmenow/ESP32-Cheap-Yellow-Display/main/Hardware/images/breakout.jpg)
 
-### External Antenna
+A simple breakout board for the CYD that breaks out all available pins to standard 2.54mm headers.
 
-The CYD can be modified to use an external antenna. Check out the [External Antenna](/Mods/ExternalAntenna) page for more information.
+#### Features:
 
-### Additional Storage
+- Breaks out all available pins
+- Includes mounting holes
 
-The CYD has a microSD card slot that can be used for additional storage. Check out the [SD Card](/Examples/Basics/SDCard) example for how to use it.
+#### Where to buy:
+
+- [PCBWay](https://www.pcbway.com/project/shareproject/ESP32_Cheap_Yellow_Display_Breakout_Board_e5b8a5c9.html)
+
+### CYD Radio by @witnessmenow
+
+![CYD Radio](https://raw.githubusercontent.com/witnessmenow/ESP32-Cheap-Yellow-Display/main/Hardware/images/radio.jpg)
+
+A simple FM radio module for the CYD using the RDA5807M module.
+
+#### Features:
+
+- Adds FM radio functionality to the CYD
+- Includes a 3.5mm audio jack
+- Includes mounting holes
+
+#### Where to buy:
+
+- [PCBWay](https://www.pcbway.com/project/shareproject/ESP32_Cheap_Yellow_Display_Radio_Module_e5b8a5c9.html)
 
 ## Contributing
 
-If you have created an add-on for the CYD, please consider contributing it to this repository. You can do this by:
+If you have designed an add-on for the CYD and would like to have it listed here, please open a pull request with the following information:
 
-1. Creating a new folder in the appropriate directory (e.g., `/3dModels` for 3D printable models)
-2. Adding your files
-3. Adding documentation
-4. Creating a pull request
-
-Please make sure to include:
-
-- Clear documentation
-- Required hardware/components
-- Assembly instructions (if applicable)
-- Example code (if applicable)
-- License information
-
-Thank you for contributing to the CYD community!
+- Name of the add-on
+- Description
+- Features
+- Where to buy (if applicable)
+- Images
+- Any other relevant information
